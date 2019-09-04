@@ -125,3 +125,4 @@ dmypy.json
 .pyre/
 
 /.idea/
+/mymatplotlib/__init__.py
