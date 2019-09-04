@@ -1,5 +1,5 @@
 from matplotlib import font_manager, pyplot as plt
-
+import numpy as np
 
 class MyMatplotlib:
     """
@@ -13,6 +13,7 @@ class MyMatplotlib:
     @staticmethod
     def plt_weather():
         """
+        <<折线图>>
         一天的天气变化
         y:天气参数
         x:时间
@@ -27,8 +28,8 @@ class MyMatplotlib:
         # 天气
         y = [11, 13, 15, 17, 19, 20, 23, 34, 32, 32, 30, 18]
 
-        # 画图
-        plt.plot(x, y)
+        # 画图   # 绘制网格
+        plt.plot(x, y, label="温度走势", color="red", linestyle=':', alpha=0.5)
 
         # 设置x刻度(不设置会根据相应的轴 自动设置)
         # plt.xticks(x)
@@ -38,6 +39,10 @@ class MyMatplotlib:
         # 设置y刻度(不设置会根据相应的轴 自动设置)
         plt.yticks(range(-30, 50, 5))
 
+        # 绘制网格
+        plt.grid(alpha=0.4, linestyle=":")
+        # 设置图例
+        plt.legend(loc=0, prop=my_font)
         # 添加描述信息
         # 设置title
         plt.title("0-24点 时间/温度变化曲线图", fontproperties=my_font)
@@ -51,6 +56,20 @@ class MyMatplotlib:
         # show
         plt.show()
 
+    @staticmethod
+    def weather_scatter():
+        # 利用 numpy 生成 随机数组
+        x = np.random.rand(1000)
+        y = np.random.rand(1000)
+        # 设置 散点图
+        plt.scatter(x, y)
+
+        # 保存图片
+        plt.savefig("./img/scatter.png")
+        # show
+        plt.show()
+
 
 if __name__ == '__main__':
-    MyMatplotlib.plt_weather()
+    # MyMatplotlib.plt_weather()
+    MyMatplotlib.weather_scatter()
