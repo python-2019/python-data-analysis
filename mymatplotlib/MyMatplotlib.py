@@ -11,7 +11,7 @@ class MyMatplotlib:
         print("mymatplotlib 的一些测试方法")
 
     @staticmethod
-    def plt_weather():
+    def weather_plot():
         """
         <<折线图>>
         一天的天气变化
@@ -71,5 +71,5 @@ class MyMatplotlib:
 
 
 if __name__ == '__main__':
-    # MyMatplotlib.plt_weather()
+    # MyMatplotlib.weather_plot()
     MyMatplotlib.weather_scatter()
