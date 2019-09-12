@@ -56,3 +56,12 @@ if __name__ == '__main__':
 
     # From 'a' remove all of 'b'
     setdiff_d = np.setdiff1d(a, b)
+
+    #  如何得到两个数组元素匹配的位置 array([1, 3, 5, 7]),)
+    a = np.array([1, 2, 3, 2, 3, 4, 3, 4, 5, 6])
+    b = np.array([7, 2, 10, 2, 7, 4, 9, 4, 9, 8])
+    # where 满足条件(condition)，输出x，不满足输出y。
+    # 只有条件 (condition)，没有x和y，则输出满足条件 (即非0) 元素的坐标
+    # 结果 [4 4 5 6]
+    where = np.where(a == b)
+    a[np.where(a > 3)]
