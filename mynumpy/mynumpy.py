@@ -8,15 +8,15 @@ class mynumpy:
 
 
 if __name__ == '__main__':
-    arange = np.arange(6)
-    # print(arange)
-    arange_reshape = arange.reshape((2, 3))
-    # print("#########")
-    print(arange_reshape)
-    reshape_ = arange_reshape + 2
-    print("#########")
-    print(reshape_)
-    arange__reshape = np.arange(6).reshape((2, 3))
-    arange_reshape = arange__reshape + arange_reshape
-    print("#########")
+    # 生成 数组 [0 1 2 3 4 5]
+    arr1 = np.arange(6)
+
+    # 切割 一维数组 为 二维数组 [[0 1 2] [3 4 5]]
+    arr2 = arr1.reshape((2, 3))
+
+    # 数组 的算术运算 [[2 3 4] [5 6 7]]
+    reshape_arithmetic = arr2 + 2
+
+    # 数组 与 数组 的运算 [[ 0  2  4] [ 6  8 10]]
+    arange_reshape = arr2 + arr2
     print(arange_reshape)
